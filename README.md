@@ -33,9 +33,17 @@ trabajo_final_mineria_textos/
 
 ### 1. Clonar o descargar el repositorio
 
+Este repositorio usa **Git LFS** para los archivos del modelo. Asegúrate de tener Git LFS instalado:
+
+```bash
+# Instalar Git LFS (solo la primera vez)
+git lfs install
+```
+
 ```bash
 git clone <url-del-repo>
 cd trabajo_final_mineria_textos
+git lfs pull   # descarga el modelo (~463 MB)
 ```
 
 ### 2. Crear entorno virtual (recomendado)
@@ -90,7 +98,7 @@ python app.py
 
 Se abrirá automáticamente en el navegador en `http://127.0.0.1:7860`.
 
-La primera ejecución descargará **Flan-T5-small** (~300 MB) desde HuggingFace. Las siguientes arrancarán desde caché.
+La primera ejecución descargará **Flan-T5-base** (~250 MB) desde HuggingFace. Las siguientes arrancarán desde caché.
 
 > Si ejecutas desde un servidor remoto (SSH, Colab), añade `share=True` en `demo.launch()` para obtener un enlace público temporal.
 
@@ -117,4 +125,4 @@ El mejor modelo (por F1-macro en test) se guarda automáticamente en `/content/m
 - [HuggingFace Transformers](https://huggingface.co/docs/transformers)
 - [TweetEval dataset](https://huggingface.co/datasets/cardiffnlp/tweet_eval)
 - [Gradio](https://gradio.app)
-- [Flan-T5](https://huggingface.co/google/flan-t5-small)
+- [Flan-T5](https://huggingface.co/google/flan-t5-base)
