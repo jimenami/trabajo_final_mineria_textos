@@ -1,5 +1,11 @@
+import os
+import zipfile
 import gradio as gr
 from transformers import pipeline, T5ForConditionalGeneration, AutoTokenizer
+
+if not os.path.isdir('./modelo_guardado') and os.path.isfile('./modelo_guardado.zip'):
+    with zipfile.ZipFile('./modelo_guardado.zip', 'r') as zip_ref:
+        zip_ref.extractall('.')
 
 sentiment_pipeline = pipeline('text-classification', model='./modelo_guardado')
 
