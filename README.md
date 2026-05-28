@@ -43,8 +43,13 @@ git lfs install
 ```bash
 git clone <url-del-repo>
 cd trabajo_final_mineria_textos
-git lfs pull   # descarga el modelo (~463 MB)
+git lfs pull   # descarga el modelo (~960 MB en total)
 ```
+
+> **Si el clone se interrumpió** (Ctrl+C durante la descarga LFS), `git lfs pull` puede no ser suficiente. Ejecuta:
+> ```bash
+> git restore --source=HEAD :/
+> ```
 
 ### 2. Crear entorno virtual (recomendado)
 
@@ -98,7 +103,7 @@ python app.py
 
 Se abrirá automáticamente en el navegador en `http://127.0.0.1:7860`.
 
-La primera ejecución descargará **Flan-T5-base** (~250 MB) desde HuggingFace. Las siguientes arrancarán desde caché.
+La primera ejecución descargará **Flan-T5-small** (~80 MB) desde HuggingFace. Las siguientes arrancarán desde caché.
 
 > Si ejecutas desde un servidor remoto (SSH, Colab), añade `share=True` en `demo.launch()` para obtener un enlace público temporal.
 
